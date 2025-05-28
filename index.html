@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denis Muthui | Interactive Media Specialist</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">Denis<span>Muthui</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="active" data-translate="nav.home">Home</a>
+                <a href="about.html" data-translate="nav.about">About</a>
+                <a href="portfolio/index.html" data-translate="nav.portfolio">Portfolio</a>
+                <a href="contact.html" data-translate="nav.contact">Contact</a>
+                <button class="language-toggle" aria-label="Toggle language">
+                    <i class="fas fa-globe"></i>
+                    <span>FR</span>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-moon"></i></button>
+            </nav>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Uncomment and set src to use a video background -->
+            <video class="hero-bg-video" autoplay muted loop playsinline poster="#">
+                <source src="/assets/imgs/24497-344562750.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 data-translate="hero.title">Creative Designer & Developer</h1>
+                <p data-translate="hero.subtitle">Crafting beautiful digital experiences that make an impact.</p>
+                <div class="hero-buttons">
+                    <a href="portfolio/index.html" class="btn" data-translate="hero.view-work">View My Work</a>
+                    <a href="contact.html" class="btn btn-outline" data-translate="hero.contact">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Denis Muthui. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="modalContent">
+                <!-- Carousel container -->
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <!-- Carousel items will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <!-- Project details will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add language.js script -->
+    <script src="assets/js/language.js"></script>
+</body>
+</html>

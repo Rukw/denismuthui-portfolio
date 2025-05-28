@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="portfolio.graphic.title">Graphic Design Portfolio | Denis Muthui</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../assets/js/main.js" defer></script>
+    <style>
+        .portfolio-carousel {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            flex: 0 0 80%;
+            height: 90%;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-card {
+            width: 100%;
+            height: 100%;
+            background: var(--tile-bg);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 80%;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 96%;
+            transform: translateY(-50%);
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            pointer-events: none;
+        }
+
+        .carousel-nav button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            opacity: 0.8;
+        }
+
+        .carousel-nav button:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .carousel-dot {
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide {
+                flex: 0 0 90%;
+            }
+        }
+
+        /* Add new styles for the navigation swipe indicator */
+        .nav-swipe-indicator {
+            display: none;
+            text-align: center;
+            padding: 0.5rem;
+            color: var(--accent);
+            font-size: 0.9rem;
+            background: var(--tile-bg);
+            border-radius: 0.5rem;
+            margin: 0.5rem auto;
+            width: fit-content;
+            animation: pulse 2s infinite;
+        }
+
+        .nav-swipe-indicator i {
+            margin-right: 0.5rem;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-swipe-indicator {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* Modal Carousel Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-3%, -3%);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-content {
+            position: relative;
+            background: var(--tile-bg);
+            margin: 2rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+            max-height: 800px;
+            overflow-y: auto;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--primary-text);
+            cursor: pointer;
+            padding: 0.5rem;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        .modal-body {
+            color: var(--primary-text);
+        }
+
+        .modal-body h2 {
+            color: var(--primary-text);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .project-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 0.5rem;
+        }
+
+        .project-info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .project-description {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .project-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-btn.primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .project-btn.secondary {
+            background: var(--bg);
+            color: var(--primary-text);
+            border: 2px solid var(--accent);
+        }
+
+        .project-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal .carousel-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .modal .carousel {
+            position: relative;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+        }
+
+        .modal .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100%;
+        }
+
+        .modal .carousel-item {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 85%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal .carousel-item img {
+            max-width: 100%;
+            max-height: 93%;
+            width: auto;
+            height: auto;
+            border-radius: 0.5rem;
+            object-fit: contain;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal .carousel-item video {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal .carousel-btn {
+            position: absolute;
+            top: 95%;
+            transform: translateY(-50%);
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 2;
+            opacity: 0.8;
+        }
+
+        .modal .carousel-btn:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal .carousel-btn.prev-btn {
+            left: 1rem;
+        }
+
+        .modal .carousel-btn.next-btn {
+            right: 1rem;
+        }
+
+        .modal .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: var(--bg);
+            border-radius: 0.5rem;
+        }
+
+        .modal .carousel-indicator {
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .modal .carousel-indicator.active {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .modal {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1rem;
+            }
+
+            .modal .carousel-container {
+                height: 60vh;
+            }
+
+            .modal .carousel-btn {
+                width: 1.5rem;
+                height: 1.5rem;
+                font-size: 1rem;
+            }
+
+            .project-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Spinner -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="../index.html" class="logo">Denis<span>Muthui</span></a>
+            <nav class="nav-links">
+                <a href="../index.html" data-translate="nav.home">Home</a>
+                <a href="../about.html" data-translate="nav.about">About</a>
+                <a href="index.html" class="active" data-translate="nav.portfolio">Portfolio</a>
+                <a href="../contact.html" data-translate="nav.contact">Contact</a>
+                <button class="language-toggle" aria-label="Toggle language">
+                    <i class="fas fa-globe"></i>
+                    <span>FR</span>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-moon"></i></button>
+            </nav>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Secondary Navigation -->
+    <nav class="portfolio-nav">
+        <div class="portfolio-nav-container">
+            <div class="portfolio-nav-title" data-translate="portfolio.title">Portfolio</div>
+            <div class="portfolio-nav-links">
+                <a href="branding.html" data-translate="portfolio.branding">Branding</a>
+                <a href="graphic-design.html" class="active" data-translate="portfolio.graphic">Graphic Design</a>
+                <a href="illustrations.html" data-translate="portfolio.illustration">Illustrations</a>
+                <a href="motion-graphics.html" data-translate="portfolio.motion">Motion Graphics</a>
+                <a href="photography.html" data-translate="portfolio.photography">Photography</a>
+                <a href="web-design.html" data-translate="portfolio.web">Web Design</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add the new swipe indicator -->
+    <div class="nav-swipe-indicator">
+        <i class="fas fa-hand-point-right"></i>
+        <span data-translate="portfolio.swipe">Swipe to see more categories</span>
+    </div>
+
+    <main>
+        <section class="section-header">
+            <h2 data-translate="portfolio.graphic">Graphic Design Projects</h2>
+            <p data-translate="portfolio.graphic-description">Explore a selection of graphic design projects. Click any project for a quick view with images and videos.</p>
+        </section>
+
+        <section class="portfolio-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Project Card 1 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="graphic1">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/graphic-design/thumbnails/graphic-design-01-thumb-01.png" alt="Graphic Design Project One">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-print">Print</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-digital">Digital</span>
+                                    </div>
+                                    <h3>Graphic Design Project One</h3>
+                                    <p data-translate="portfolio.project1-desc">A comprehensive graphic design project that includes print and digital materials.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="graphic2">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/graphic-design/thumbnails/graphic-design-02-thumb-01.png" alt="Graphic Design Project Two">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-social">Social Media</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-marketing">Marketing</span>
+                                    </div>
+                                    <h3>Graphic Design Project Two</h3>
+                                    <p data-translate="portfolio.project2-desc">Social media graphics and marketing materials for a brand campaign.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="graphic3">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/graphic-design/thumbnails/graphic-design-03-thumb-01.png" alt="Graphic Design Project Three">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-editorial">Editorial</span>
+                                    </div>
+                                    <h3>Editorial Design Project</h3>
+                                    <p data-translate="portfolio.project3-desc">Complete editorial design including layout, typography, and illustrations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 4 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="graphic4">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/graphic-design/thumbnails/graphic-design-04-thumb-01.jpg" alt="Graphic Design Project Two">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-social">Social Media</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-marketing">Marketing</span>
+                                    </div>
+                                    <h3>Graphic Design Project Four</h3>
+                                    <p data-translate="portfolio.project2-desc">Social media graphics and marketing materials for a brand campaign.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 5 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="graphic5">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/graphic-design/thumbnails/graphic-design-05-thumb-01.jpg" alt="Graphic Design Project Two">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-social">Social Media</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-marketing">Marketing</span>
+                                    </div>
+                                    <h3>Graphic Design Project Five
+                                    </h3>
+                                    <p data-translate="portfolio.project2-desc">Social media graphics and marketing materials for a brand campaign.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 6 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="graphic6">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/graphic-design/thumbnails/graphic-design-06-thumb-01.png" alt="Graphic Design Project Two">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-social">Social Media</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-marketing">Marketing</span>
+                                    </div>
+                                    <h3>Graphic Design Project Two</h3>
+                                    <p data-translate="portfolio.project2-desc">Social media graphics and marketing materials for a brand campaign.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 7 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="graphic7">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/graphic-design/thumbnails/graphic-design-07-thumb-01.jpg" alt="Graphic Design Project Two">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-social">Social Media</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-marketing">Marketing</span>
+                                    </div>
+                                    <h3>Graphic Design Project Two</h3>
+                                    <p data-translate="portfolio.project2-desc">Social media graphics and marketing materials for a brand campaign.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 8 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="graphic8">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/graphic-design/thumbnails/graphic-design-08-thumb-01.jpg" alt="Graphic Design Project Two">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-social">Social Media</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-marketing">Marketing</span>
+                                    </div>
+                                    <h3>Graphic Design Project Two</h3>
+                                    <p data-translate="portfolio.project2-desc">Social media graphics and marketing materials for a brand campaign.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="prev-btn" aria-label="Previous project"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn" aria-label="Next project"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-dots"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="modalContent">
+                <!-- Carousel container and project details will be dynamically inserted here by JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Denis Muthui. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Project data
+        const projectData = {
+            graphic1: {
+                title: "Graphic Design Project One",
+                Year: "15 August 2024",
+                technologies: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign"],
+                description: "A comprehensive graphic design project that includes print and digital materials. The project focused on creating cohesive visual elements across multiple platforms.",
+                media: [
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-01-full-01.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-01-full-02.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-01-full-03.png"
+                    }
+                ]
+            },
+            graphic2: {
+                title: "Graphic Design Project Two",
+                Year: "20 August 2024",
+                technologies: ["Social Media Design", "Marketing Materials", "Brand Guidelines"],
+                description: "Social media graphics and marketing materials for a brand campaign. Created engaging visual content for various social media platforms.",
+                media: [
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-02-full-01.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-02-full-02.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-02-full-03.png"
+                    }
+                ]
+            },
+            graphic3: {
+                title: "Editorial Design Project",
+                Year: "25 August 2024",
+                technologies: ["Editorial Design", "Typography", "Layout Design"],
+                description: "Complete editorial design including layout, typography, and illustrations. Created a cohesive visual language for a magazine publication.",
+                media: [
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-05-full-01.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-05-full-02.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-05-full-03.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-05-full-04.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-05-full-05.png"
+                    }
+                ]
+            },
+                graphic4: {
+                title: "Editorial Design Project",
+                Year: "25 August 2024",
+                technologies: ["Editorial Design", "Typography", "Layout Design"],
+                description: "Complete editorial design including layout, typography, and illustrations. Created a cohesive visual language for a magazine publication.",
+                media: [
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-04-full-01.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-04-full-02.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-04-full-03.png"
+                    }
+                ]
+            },
+            graphic5: {
+                title: "Editorial Design Project",
+                Year: "25 August 2024",
+                technologies: ["Editorial Design", "Typography", "Layout Design"],
+                description: "Complete editorial design including layout, typography, and illustrations. Created a cohesive visual language for a magazine publication.",
+                media: [
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-08-full-01.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-08-full-02.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-08-full-03.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-08-full-04.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-08-full-05.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-08-full-06.jpg"
+                    }
+                ]
+            },
+            graphic6: {
+                title: "Editorial Design Project",
+                Year: "25 August 2024",
+                technologies: ["Editorial Design", "Typography", "Layout Design"],
+                description: "Complete editorial design including layout, typography, and illustrations. Created a cohesive visual language for a magazine publication.",
+                media: [
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-06-full-01.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-06-full-02.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-06-full-03.png"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-06-full-04.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-06-full-05.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-06-full-06.png"
+                    }
+                ]
+            },
+            graphic7: {
+                title: "Editorial Design Project",
+                Year: "25 August 2024",
+                technologies: ["Editorial Design", "Typography", "Layout Design"],
+                description: "Complete editorial design including layout, typography, and illustrations. Created a cohesive visual language for a magazine publication.",
+                media: [
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-07-full-01.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-07-full-02.jpg"
+                    }
+                ]    
+            },
+            graphic8: {
+                title: "Editorial Design Project",
+                Year: "25 August 2024",
+                technologies: ["Editorial Design", "Typography", "Layout Design"],
+                description: "Complete editorial design including layout, typography, and illustrations. Created a cohesive visual language for a magazine publication.",
+                media: [
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-03-full-01.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-03-full-02.1.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-03-full-02.jpg"
+                    },
+                    {
+                        type: 'image',
+                        url: "../assets/imgs/portfolio/graphic-design/full-size/graphic-design-03-full-03.jpg"
+                    }
+                ]    
+            }
+
+        };
+
+        // Initialize main portfolio carousel
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeMainCarousel();
+            initializeProjectCards();
+        });
+
+        function initializeMainCarousel() {
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            let currentIndex = 0;
+
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.carousel-dot');
+
+            function updateCarousel() {
+                const slideWidth = slides[0].offsetWidth;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+            }
+
+            // Event listeners for navigation
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextSlide();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevSlide();
+                });
+            }
+
+            // Initialize carousel
+            updateCarousel();
+        }
+
+        function initializeProjectCards() {
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('click', function () {
+                    const projectId = this.getAttribute('data-project');
+                    openProjectModal(projectId);
+                });
+            });
+        }
+
+        function createCarouselItems(media) {
+            return media.map((item, index) => {
+                if (item.type === 'image') {
+                    return `<div class="carousel-item">
+                        <img src="${item.url}" alt="Project image ${index + 1}">
+                    </div>`;
+                } else {
+                    return `<div class="carousel-item">
+                        <video controls>
+                            <source src="${item.url}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>`;
+                }
+            }).join('');
+        }
+
+        function createCarouselIndicators(count) {
+            return Array(count).fill('').map((_, index) => `
+                <button class="carousel-indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></button>
+            `).join('');
+        }
+
+        function openProjectModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+            const modalContent = document.getElementById('modalContent');
+            const modalHTML = `
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            ${createCarouselItems(project.media)}
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-indicators">
+                        ${createCarouselIndicators(project.media.length)}
+                    </div>
+                </div>
+                <h2>${project.title}</h2>
+                <div class="project-info">
+                    <div class="project-info-item">
+                        <span class="info-label" data-translate="portfolio.duration">Year:</span>
+                        <span>${project.Year}</span>
+                    </div>
+                    <div class="project-info-item">
+                        <span class="info-label" data-translate="portfolio.technologies">Technologies:</span>
+                        <span>${project.technologies.join(', ')}</span>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>${project.description}</p>
+                </div>
+                <div class="project-buttons">
+                    <a href="${project.DownloadPDF || '#'}" class="project-btn primary" target="_blank" data-translate="portfolio.live-demo">Download PDF</a>
+                </div>
+            `;
+            modalContent.innerHTML = modalHTML;
+            document.getElementById('projectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Use setTimeout to ensure DOM is updated before initializing carousel
+            setTimeout(() => {
+                initializeModalCarousel();
+            }, 10);
+        }
+
+        function initializeModalCarousel() {
+            const track = document.querySelector('.modal .carousel-track');
+            const items = document.querySelectorAll('.modal .carousel-item');
+            const indicators = document.querySelectorAll('.modal .carousel-indicator');
+            const prevBtn = document.querySelector('.modal .carousel-btn.prev-btn');
+            const nextBtn = document.querySelector('.modal .carousel-btn.next-btn');
+            let currentIndex = 0;
+
+            // Return early if no items found
+            if (!items.length) return;
+
+            function updateCarousel() {
+                if (items.length === 0) return;
+                const itemWidth = items[0].offsetWidth;
+                track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCarousel();
+            }
+
+            // Event listeners for navigation
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextSlide();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevSlide();
+                });
+            }
+
+            // Event listeners for indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => goToSlide(index));
+            });
+
+            // Initialize carousel
+            updateCarousel();
+
+            // Close modal when clicking the close button
+            const closeBtn = document.querySelector('.modal-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    document.getElementById('projectModal').classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            // Close modal when clicking outside
+            const modal = document.getElementById('projectModal');
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        }
+    </script>
+    <!-- Add language.js script -->
+    <script src="../assets/js/language.js"></script>
+</body>
+</html> 
