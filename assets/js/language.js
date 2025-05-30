@@ -699,18 +699,10 @@ class LanguageManager {
     }
 
     updateToggleButton() {
-        const langToggle = document.querySelector('.language-toggle');
-        if (langToggle) {
-            const icon = langToggle.querySelector('i');
-            const text = langToggle.querySelector('span');
-            
-            if (this.currentLang === 'en') {
-                icon.className = 'fas fa-globe';
-                text.textContent = 'FR';
-            } else {
-                icon.className = 'fas fa-globe';
-                text.textContent = 'EN';
-            }
+        const languageToggle = document.querySelector('.language-toggle');
+        if (languageToggle) {
+            const currentLang = document.body.getAttribute('data-lang') || 'en';
+            languageToggle.querySelector('span').textContent = currentLang === 'en' ? 'FR' : 'EN';
         }
     }
 }

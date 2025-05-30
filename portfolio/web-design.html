@@ -77,7 +77,7 @@
 
         .carousel-nav {
             position: absolute;
-            top: 96%;
+            top: 100%;
             transform: translateY(-50%);
             width: 90%;
             display: flex;
@@ -439,6 +439,58 @@
 
             .project-info {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Theme Toggle Switch Styles */
+        .theme-toggle {
+            position: relative;
+            width: 50px;
+            height: 28px;
+            background-color: var(--tile-bg);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .theme-toggle i {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            top: 2px;
+            left: 2px;
+            font-size: 1rem;
+        }
+
+        body.dark-mode .theme-toggle i {
+            transform: translateX(22px);
+            background-color: var(--accent);
+        }
+
+        /* Language Toggle Mobile Styles */
+        @media (max-width: 768px) {
+            .language-toggle span {
+                display: inline-block; /* Make the span visible */
+                margin-left: 0.5rem; /* Add space between icon and text */
+                font-weight: 600;
+            }
+
+            .language-toggle {
+                display: flex;
+                align-items: center;
+                /* Adjust padding/sizing if needed */
+                padding: 0.5rem 1rem;
             }
         }
     </style>

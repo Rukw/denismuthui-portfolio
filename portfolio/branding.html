@@ -15,13 +15,14 @@
             width: 100%;
             height: 80vh;
             overflow: hidden;
-            margin: 2rem 0;
+            margin-top: 2rem;
         }
 
         .carousel-container {
             position: relative;
             width: 100%;
-            height: 100%;
+            height: 85%;
+            left: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -37,7 +38,7 @@
         .carousel-slide {
             flex: 0 0 80%;
             height: 90%;
-            padding: 0 1rem;
+            padding: 0 5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -78,9 +79,9 @@
 
         .carousel-nav {
             position: absolute;
-            top: 96%;
+            top: 100%;
             transform: translateY(-50%);
-            width: 90%;
+            width: 70%;
             display: flex;
             justify-content: space-between;
             padding: 0 1rem;
@@ -111,7 +112,7 @@
 
         .carousel-dots {
             position: absolute;
-            bottom: 1rem;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -134,8 +135,14 @@
         }
 
         @media (max-width: 768px) {
+            .carousel-container {
+            flex-wrap: wrap;
+            left: 0;
+            }
+
             .carousel-slide {
                 flex: 0 0 90%;
+                padding: 0 1rem;
             }
         }
 
@@ -442,6 +449,58 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Theme Toggle Switch Styles */
+        .theme-toggle {
+            position: relative;
+            width: 50px;
+            height: 28px;
+            background-color: var(--tile-bg);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .theme-toggle i {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            top: 2px;
+            left: 2px;
+            font-size: 1rem;
+        }
+
+        body.dark-mode .theme-toggle i {
+            transform: translateX(22px);
+            background-color: var(--accent);
+        }
+
+        /* Language Toggle Mobile Styles */
+        @media (max-width: 768px) {
+            .language-toggle span {
+                display: inline-block; /* Make the span visible */
+                margin-left: 0.5rem; /* Add space between icon and text */
+                font-weight: 600;
+            }
+
+            .language-toggle {
+                display: flex;
+                align-items: center;
+                /* Adjust padding/sizing if needed */
+                padding: 0.5rem 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -490,7 +549,7 @@
         <i class="fas fa-hand-point-right"></i>
         <span data-translate="portfolio.swipe">Swipe to see more categories</span>
     </div>
-    <main>
+    <main class="carousel-container">
         <section class="section-header">
             <h2 data-translate="portfolio.branding">Branding Projects</h2>
             <p data-translate="portfolio.branding-description">Explore a selection of branding projects. Click any
@@ -922,6 +981,26 @@
                 });
             }
         }
+
+        // Toggle language
+        const languageToggle = document.querySelector('.language-toggle');
+        languageToggle.addEventListener('click', () => {
+            let currentLang = document.body.getAttribute('data-lang') || 'en';
+            const newLang = currentLang === 'en' ? 'fr' : 'en';
+            document.body.setAttribute('data-lang', newLang);
+            languageToggle.querySelector('span').textContent = newLang === 'en' ? 'FR' : 'EN';
+            updateTextContent();
+        });
+
+        // Set initial language text on button
+        const initialLang = document.body.getAttribute('data-lang') || 'en';
+        languageToggle.querySelector('span').textContent = initialLang === 'en' ? 'FR' : 'EN';
+
+        // Loading spinner logic
+        const loader = document.querySelector('.loader');
+        window.addEventListener('load', () => {
+            loader.style.display = 'none';
+        });
     </script>
     <!-- Add language.js script -->
     <script src="../assets/js/language.js"></script>
