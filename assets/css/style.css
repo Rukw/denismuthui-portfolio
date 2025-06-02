@@ -487,7 +487,6 @@ footer .container {
 }
 .project-card {
     background: var(--tile-bg);
-    border-radius: 1.2rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     overflow: hidden;
     display: flex;
@@ -506,7 +505,7 @@ footer .container {
     display: block;
 }
 .project-content {
-    padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+    padding: 1rem;
 }
 .project-tags {
     display: flex;
@@ -583,7 +582,7 @@ footer .container {
     width: 90%;
     max-width: 1200px;
     max-height: 90vh;
-    border-radius: 12px;
+    border-radius: 0.15rem;
     position: relative;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -660,9 +659,7 @@ footer .container {
     width: auto; /* Changed from 100% to auto */
     height: auto; /* Changed from 100% to auto */
     object-fit: contain;
-    background: rgba(0, 0, 0, 0.1);
     border-radius: 4px; /* Added subtle border radius */
-    background-color: rgb(45, 45, 48);
 }
 
 /* Add a class for portrait images */
@@ -679,8 +676,6 @@ footer .container {
 
 .modal .carousel-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -706,16 +701,6 @@ footer .container {
 
 .modal .next-btn {
     right: 20px;
-}
-
-.modal .carousel-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 5;
 }
 
 .modal .carousel-indicator {
@@ -1078,17 +1063,7 @@ footer .container {
 }
 
 .carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.8rem;
-    z-index: 3;
-    padding: 0.5rem 1rem;
-    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(4px);
-    border-radius: 50px;
 }
 
 .carousel-indicator {
@@ -1183,10 +1158,6 @@ footer .container {
 }
 
 /* Portfolio Categories Section */
-.section-header {
-    padding: 0 2rem;
-}
-
 
 /* Contact Section */
 .contact-section {
@@ -1340,7 +1311,6 @@ footer .container {
 @media (min-width: 768px) {
     .section-header {
         width: 20%;
-        padding: 0 10rem;
     }
     
     .contact-container {
