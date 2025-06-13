@@ -679,11 +679,11 @@
         <div class="portfolio-nav-container">
             <div class="portfolio-nav-title" data-translate="portfolio.title">Portfolio</div>
             <div class="portfolio-nav-links">
-                <a href="branding.html" class="active" data-translate="portfolio.branding">Branding</a>
+                <a href="photography.html" data-translate="portfolio.photography">Photography</a>
                 <a href="graphic-design.html" data-translate="portfolio.graphic">Graphic Design</a>
+                <a href="branding.html" class="active" data-translate="portfolio.branding">Branding</a>
                 <a href="illustrations.html" data-translate="portfolio.illustration">Illustrations</a>
                 <a href="motion-graphics.html" data-translate="portfolio.motion">Motion Graphics</a>
-                <a href="photography.html" data-translate="portfolio.photography">Photography</a>
                 <a href="web-design.html" data-translate="portfolio.web">Web Design</a>
             </div>
         </div>
@@ -708,7 +708,7 @@
                         <div class="project-card" data-project="branding1">
                             <div class="project-image">
                                 <img src="../assets/imgs/portfolio/branding/thumbnails/branding-01-thumb-01.jpg"
-                                    alt="Branding Project One">
+                                    alt="Branding Project">
                             </div>
                             <div class="project-content">
                                 <div>
@@ -717,7 +717,7 @@
                                         <span class="project-tag"
                                             data-translate="portfolio.tag-identity">Identity</span>
                                     </div>
-                                    <h3>Branding Project One</h3>
+                                    <h3>Branding</h3>
                                     <p data-translate="portfolio.project1-desc">A comprehensive branding project that
                                         includes logo design, color palette, and brand guidelines.</p>
                                 </div>
@@ -738,29 +738,9 @@
                                         <span class="project-tag"
                                             data-translate="portfolio.tag-strategy">Strategy</span>
                                     </div>
-                                    <h3>Branding Project Two</h3>
+                                    <h3>Product Branding</h3>
                                     <p data-translate="portfolio.project2-desc">Brand identity development with focus on
                                         typography and visual elements.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="carousel-slide">
-                        <div class="project-card" data-project="branding3">
-                            <div class="project-image">
-                                <img src="../assets/imgs/portfolio/branding/thumbnails/branding-01-thumb-03.png"
-                                    alt="Branding Project Three">
-                            </div>
-                            <div class="project-content">
-                                <div>
-                                    <div class="project-tags">
-                                        <span class="project-tag"
-                                            data-translate="portfolio.tag-packaging">Packaging</span>
-                                    </div>
-                                    <h3>City Cab Branding</h3>
-                                    <p data-translate="portfolio.project3-desc">Complete brand refresh including new
-                                        logo, color scheme, and marketing materials.</p>
                                 </div>
                             </div>
                         </div>
@@ -792,7 +772,7 @@
         // Project data
         const projectData = {
             branding1: {
-                title: "Branding Project One",
+                title: "Branding",
                 Year: "15 August 2024",
                 technologies: ["Brand Strategy", "Logo Design", "Brand Guidelines"],
                 description: "A comprehensive branding project that includes brand strategy, logo design, and complete brand guidelines.",
@@ -828,10 +808,6 @@
                     {
                         type: 'image',
                         url: "../assets/imgs/portfolio/branding/full-size/branding-01-full-06.png"
-                    },
-                    {
-                        type: 'video',
-                        url: "../assets/imgs/portfolio/branding/videos/branding-01-video-01.mp4"
                     }
                 ]
             },
@@ -861,47 +837,6 @@
                 liveDemo: "#",
                 github: "#"
             },
-            branding3: {
-                title: "City Cab Branding",
-                Year: "28 July 2022",
-                technologies: ["Brand Strategy", "Visual Design", "Marketing"],
-                description: "Complete brand refresh including new logo, color scheme, and marketing materials. The project helped the client modernize their brand while maintaining their core identity.",
-                media: [{
-                        type: 'image',
-                        url: "../assets/imgs/portfolio/branding/full-size/branding-03-full-01.png"
-                    },
-                    {
-                        type: 'image',
-                        url: "../assets/imgs/portfolio/branding/full-size/branding-03-full-02.png"
-                    },
-                    {
-                        type: 'image',
-                        url: "../assets/imgs/portfolio/branding/full-size/branding-03-full-03.png"
-                    },
-                    {
-                        type: 'image',
-                        url: "../assets/imgs/portfolio/branding/full-size/branding-03-full-04.png"
-                    },
-                    {
-                        type: 'image',
-                        url: "../assets/imgs/portfolio/branding/full-size/branding-03-full-05.png"
-                    },
-                    {
-                        type: 'image',
-                        url: "../assets/imgs/portfolio/branding/full-size/branding-03-full-06.png"
-                    },
-                    {
-                        type: 'image',
-                        url: "../assets/imgs/portfolio/branding/full-size/branding-03-full-07.jpg"
-                    },
-                    {
-                        type: 'image',
-                        url: "../assets/imgs/portfolio/branding/full-size/branding-03-full-08.jpg"
-                    }
-                ],
-                DownloadPDF: "../assets/imgs/portfolio/branding/pdf/CITY CAB APP DESIGN.pdf",
-                github: "#"
-            }
         };
 
         // Initialize main portfolio carousel
