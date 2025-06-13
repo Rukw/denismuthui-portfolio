@@ -15,7 +15,7 @@ const translations = {
         
         // About Page
         'about.title': 'About Me',
-        'about.intro': 'Interactive Media Specialist from Nairobi, Kenya who gets excited about turning creative ideas into campaigns that actually work. After years of hands-on learning (including practical postgrad certificates over stuffy academic programs), Im now happily based in Montreal doing what I love—blending strategy with creativity across marketing, design, and communications. I speak English and French fluently. I\'m one of those people who genuinely enjoys jumping into new projects and figuring things out as I go.',
+        'about.intro': 'I\'m a creative interactive media and marketing specialist with experience in campaigns, motion graphics, image retouching, illustration, and web design. I love working with Microsoft, Adobe tools and exploring emerging tech like AI. I hold a bachelor\'s in Marketing and two Canadian postgraduate certificates in Marketing Management and Interactive Media. Fluent in English and French, I\'m currently upskilling in Google Ads and CRMs. Outside of work, I enjoy reading, digital painting, the gym, and winter hikes—all rooted in my love for simplicity and meaningful connection.',
         'about.skills': 'Technical Skills',
         'about.design': 'Design Software',
         'about.web': 'Web Development',
@@ -342,7 +342,8 @@ const translations = {
         
         // About Page
         'about.title': 'À Propos de Moi',
-        'about.intro': 'Spécialiste en médias interactifs de Nairobi, Kenya qui s\'enthousiasme à transformer des idées créatives en campagnes qui fonctionnent vraiment. Après des années d\'apprentissage pratique (incluant des certificats d\'études supérieures axés sur la pratique plutôt que des programmes académiques poussiéreux), je suis maintenant heureusement établie à Montréal à faire ce que j\'aime—allier stratégie et créativité à travers le marketing, le design et les communications. Je parle couramment anglais et français. Je suis de ces personnes qui aiment vraiment plonger dans de nouveaux projets et comprendre les choses au fur et à mesure.',
+        'about.intro': 'Je suis un spécialiste créatif en médias interactifs et en marketing, avec de l\'expérience dans les campagnes, les graphiques animés, la retouche d\'images, l\'illustration et la conception web. J\'adore travailler avec les outils Microsoft et Adobe et explorer les technologies émergentes comme l\'IA. Je détiens un baccalauréat en Marketing et deux certificats d\'études supérieures canadiens en Gestion du Marketing et en Médias Interactifs. Bilingue en anglais et en français, je me perfectionne actuellement en Google Ads et en CRM. En dehors du travail, j\'aime la lecture, la peinture numérique, la salle de sport et les randonnées hivernales—tout cela s\'enracine dans mon amour pour la simplicité et les connexions significatives.',
+        'about.skills': 'Compétences Techniques',
         'about.design': 'Logiciels de Design',
         'about.web': 'Développement Web',
         'about.experience': 'Expérience Professionnelle',
@@ -360,13 +361,13 @@ const translations = {
         'about.values': 'Mes Valeurs Clés',
         'about.values-text': 'Avec plus de 5 ans d\'expérience dans l\'industrie créative, j\'ai développé des valeurs fondamentales qui guident mon approche du design, de la créativité et du développement professionnel.',
         'about.values.creative': 'Processus Créatif',
-        'about.values.creative-text': 'Je crois en la combinaison de la réflexion stratégique avec une exécution innovante pour livrer des solutions impactantes.',
+        'about.values.creative-text': 'Je crois en la combinaison de la pensée stratégique avec une exécution innovante pour livrer des solutions impactantes.',
         'about.values.design': 'Philosophie du Design',
-        'about.values.design-text': 'Créer des designs significatifs qui ne sont pas seulement beaux mais servent aussi un objectif clair et génèrent des résultats.',
+        'about.values.design-text': 'Créer des designs significatifs qui non seulement sont beaux mais servent aussi un objectif clair et produisent des résultats.',
         'about.values.collaboration': 'Collaboration Client',
         'about.values.collaboration-text': 'Construire des partenariats solides grâce à une communication ouverte et une compréhension approfondie des besoins des clients.',
         'about.values.learning': 'Apprentissage Continu',
-        'about.values.learning-text': 'Adopter de nouvelles technologies et méthodologies pour rester à la pointe de l\'innovation créative.',
+        'about.values.learning-text': 'Adopter les nouvelles technologies et méthodologies pour rester à l\'avant-garde de l\'innovation créative.',
         'about.download.title': 'Télécharger Mes Documents',
         'about.download.desc': 'N\'hésitez pas à télécharger mon CV et ma lettre de motivation, ou continuez à faire défiler pour explorer mon parcours professionnel en détail.',
         'about.download.cv': 'Télécharger CV',
