@@ -84,7 +84,8 @@
             <nav class="nav-links">
                 <a href="index.html" data-translate="nav.home">Home</a>
                 <a href="about.html" class="active" data-translate="nav.about">About</a>
-                <a href="portfolio/branding.html" data-translate="nav.portfolio">Portfolio</a>
+                <a href="portfolio/photography.html" data-translate="nav.portfolio">Portfolio</a>
+                <a href="../blog/index.html" data-translate="nav.blog">Blog</a>
                 <a href="contact.html" data-translate="nav.contact">Contact</a>
                 <button class="language-toggle" aria-label="Toggle language">
                     <i class="fas fa-globe"></i>
@@ -108,7 +109,7 @@
                     </div>
                     <div class="intro-video">
                         <!-- Video placeholder - Replace src with your video -->
-                        <video controls poster="assets/imgs/Denis_potrait.jpg" preload="none">
+                        <video controls poster="assets/imgs/Denis_potrait.jpg" preload="none" style="object-position: top;">
                             <source src="assets/imgs/24497-344562750.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -382,39 +383,441 @@
         <section class="download-links">
             <h3 data-translate="about.download.title">Download My Documents</h3>
             <p class="download-desc" data-translate="about.download.desc">Feel free to download my CV and cover letter, or continue scrolling to explore my professional journey in detail.</p>
-            <div class="download-buttons">
-                <a href="assets/docs/Muthui Denis Resume 2025.pdf" class="download-btn" download>
-                    <i class="fas fa-file-pdf"></i>
-                    <span data-translate="about.download.cv">Download CV</span>
-                </a>
-                <a href="assets/docs/Muthui Denis COVER LETTER 2025.pdf" class="download-btn" download>
-                    <i class="fas fa-file-alt"></i>
-                    <span data-translate="about.download.cover">Download Cover Letter</span>
-                </a>
+            <div class="download-grid">
+                <!-- English Documents -->
+                <div class="download-group">
+                    <h4>English</h4>
+                    <div class="download-buttons">
+                        <a href="assets/docs/Muthui Denis Resume 2025.pdf" class="download-btn" download>
+                            <i class="fas fa-file-pdf"></i>
+                            <span data-translate="about.download.cv">Download CV</span>
+                        </a>
+                        <a href="assets/docs/Muthui Denis COVER LETTER 2025.pdf" class="download-btn" download>
+                            <i class="fas fa-file-alt"></i>
+                            <span data-translate="about.download.cover">Download Cover Letter</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- French Documents -->
+                <div class="download-group">
+                    <h4>Français</h4>
+                    <div class="download-buttons">
+                        <a href="assets/docs/Muthui Denis CV 2025.pdf" class="download-btn" download>
+                            <i class="fas fa-file-pdf"></i>
+                            <span data-translate="about.download.cv">Télécharger CV</span>
+                        </a>
+                        <a href="assets/docs/Muthui Denis LETTRE DE MOTIVATION 2025.pdf" class="download-btn" download>
+                            <i class="fas fa-file-alt"></i>
+                            <span data-translate="about.download.cover">Télécharger Lettre de Motivation</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <style>
+            .download-links {
+                padding: 4rem 0;
+                background-color: var(--bg);
+                text-align: center;
+            }
+
+            .download-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                max-width: 800px;
+                margin: 2rem auto 0;
+                padding: 0 1rem;
+            }
+
+            .download-group {
+                background-color: var(--tile-bg);
+                border-radius: 15px;
+                padding: 2rem;
+                transition: transform 0.3s ease;
+                border: 2px solid transparent;
+            }
+
+            .download-group:hover {
+                transform: translateY(-5px);
+                border-color: var(--accent);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .download-group h4 {
+                color: var(--accent);
+                margin-bottom: 1.5rem;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            .download-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .download-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.8rem 1.5rem;
+                background-color: var(--accent);
+                color: white;
+                border-radius: 8px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: 500;
+            }
+
+            .download-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .download-btn i {
+                font-size: 1.2rem;
+            }
+
+            /* Tablet */
+            @media (max-width: 768px) {
+                .download-grid {
+                    grid-template-columns: 1fr;
+                    max-width: 400px;
+                }
+
+                .download-group {
+                    padding: 1.5rem;
+                }
+            }
+
+            /* Mobile */
+            @media (max-width: 480px) {
+                .download-links {
+                    padding: 2rem 0;
+                }
+
+                .download-grid {
+                    padding: 0 0.5rem;
+                }
+
+                .download-group {
+                    padding: 1rem;
+                }
+
+                .download-btn {
+                    padding: 0.7rem 1rem;
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
 
         <!-- Call to Action Section -->
         <section class="cta-section">
             <div class="container">
-                <h2>Let's Work Together!</h2>
-                <p>I'm actively seeking new opportunities and would love to bring my creative expertise to your team. With my diverse skill set and passion for innovation, I'm confident I can make a valuable contribution to your projects.</p>
+                <h2 data-translate="about.cta.title">Let's Work Together!</h2>
+                <p data-translate="about.cta.text">I'm actively seeking new opportunities and would love to bring my creative expertise to your team. With my diverse skill set and passion for innovation, I'm confident I can make a valuable contribution to your projects.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="cta-btn primary">
                         <i class="fas fa-paper-plane"></i>
-                        Get in Touch
+                        <span data-translate="about.cta.contact">Get in Touch</span>
                     </a>
                     <button class="cta-btn secondary back-to-top">
                         <i class="fas fa-arrow-up"></i>
-                        Back to Top
+                        <span data-translate="about.cta.back-to-top">Back to Top</span>
                     </button>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Denis Muthui. All Rights Reserved.</p>
+
+<style>
+    /* Footer Styles */
+    .footer {
+        background: var(--tile-bg);
+        padding: 4rem 2rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+        color: var(--primary-text);
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--accent);
+    }
+
+    .contact-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-list li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        color: var(--primary-text);
+    }
+
+    .contact-list i {
+        color: var(--accent);
+        font-size: 1.2rem;
+    }
+
+    .contact-list a {
+        color: var(--primary-text);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-list a:hover {
+        color: var(--accent);
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+        color: var(--primary-text);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--bg);
+        border-radius: 50%;
+        color: var(--primary-text);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: var(--accent);
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    .newsletter-form {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .footer-section p {
+        color: var(--primary-text);
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem;
+        border: 1px solid var(--border-color);
+        border-radius: 2rem;
+        background: var(--bg);
+        color: var(--primary-text);
+    }
+
+    .newsletter-form input::placeholder {
+        color: var(--primary-text);
+        opacity: 0.7;
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.5rem;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-bottom {
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .footer-bottom p {
+        color: var(--primary-text);
+    }
+
+    .footer-bottom-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+        color: var(--primary-text);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+        color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            padding: 3rem 1rem 1.5rem;
+        }
+
+        .footer-grid {
+            gap: 2rem;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer-bottom-links {
+            justify-content: center;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+        }
+
+        .newsletter-form button {
+            width: 100%;
+        }
+    }
+</style>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Quebec, Canada</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:denismuthui@outlook.com">denismuthui@outlook.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="portfolio/photography.html">Portfolio</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/tyler_d_muthui" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muthui-denis/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Rukw" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@mdmcstudios3972" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.behance.net/denisrukwaro" target="_blank" class="social-link">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to my newsletter for the latest updates and photography tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Denis Muthui. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="../terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 

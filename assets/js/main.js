@@ -453,4 +453,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Handle hero video loading
+    const heroVideo = document.querySelector('.hero-video');
+    const video = heroVideo?.querySelector('video');
+    
+    if (video) {
+        heroVideo.classList.add('loading');
+        
+        video.addEventListener('loadeddata', function() {
+            heroVideo.classList.remove('loading');
+            heroVideo.classList.add('loaded');
+        });
+
+        // Fallback in case the video takes too long to load
+        setTimeout(() => {
+            if (heroVideo.classList.contains('loading')) {
+                heroVideo.classList.remove('loading');
+                heroVideo.classList.add('loaded');
+            }
+        }, 3000);
+    }
+
 });

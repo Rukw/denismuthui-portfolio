@@ -37,7 +37,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
             position: relative;
             margin-bottom: 0.5rem;
         }
@@ -166,6 +165,8 @@
 
             .carousel-nav {
                 bottom: 1rem;
+                background-color: var(--tile-bg);
+                padding: 1rem 0;
             }
 
             .carousel-nav button {
@@ -237,6 +238,8 @@
 
             .carousel-nav {
                 top: 92%;
+                background-color: var(--tile-bg);
+                padding: 1rem;
             }
 
             .portfolio-carousel {
@@ -644,6 +647,383 @@
                 padding: 0.5rem 1rem;
             }
         }
+
+        /* Photography Blog Section Styles */
+        .photography-blog-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: .5rem 0;
+            background: var(--bg);
+        }
+
+        .blog-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--accent);
+            background: transparent;
+            color: var(--primary-text);
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .blog-card {
+            max-width: 400px;
+            margin: 0 auto;
+            background: var(--tile-bg);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+        }
+
+        .blog-type {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: var(--primary-text);
+        }
+
+        .blog-content p {
+            color: var(--secondary-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 0.8rem;
+        }
+
+        .load-more-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem;
+        }
+
+        .load-more-btn {
+            padding: 0.8rem 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 2rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (min-width: 768px) {
+            .photography-blog-section {
+                padding: 0;
+            }
+
+            .blog-categories {
+                gap: 0.5rem;
+            }
+
+            .category-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card {
+                margin: 0;
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--tile-bg);
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-text);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-text);
+        }
+
+        .contact-list i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .contact-list a {
+            color: var(--primary-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list a:hover {
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--primary-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--bg);
+            border-radius: 50%;
+            color: var(--primary-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-section p {
+            color: var(--primary-text);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            background: var(--bg);
+            color: var(--primary-text);
+        }
+
+        .newsletter-form input::placeholder {
+            color: var(--primary-text);
+            opacity: 0.7;
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: var(--primary-text);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links a {
+            color: var(--primary-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 3rem 1rem 1.5rem;
+            }
+
+            .footer-grid {
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -660,6 +1040,7 @@
                 <a href="../index.html" data-translate="nav.home">Home</a>
                 <a href="../about.html" data-translate="nav.about">About</a>
                 <a href="photography.html" class="active" data-translate="nav.portfolio">Portfolio</a>
+                <a href="../blog/index.html" data-translate="nav.blog">Blog</a>
                 <a href="../contact.html" data-translate="nav.contact">Contact</a>
                 <button class="language-toggle" aria-label="Toggle language">
                     <i class="fas fa-globe"></i>
@@ -711,11 +1092,11 @@
                             <div class="project-content">
                                 <div>
                                     <div class="project-tags">
-                                        <span class="project-tag" data-translate="portfolio.tag-landscape">Landscape</span>
-                                        <span class="project-tag" data-translate="portfolio.tag-nature">Nature</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-portrait">Portrait</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-headshot">HeadShot</span>
                                     </div>
-                                    <h3>Landscape Photography</h3>
-                                    <p data-translate="portfolio.project1-desc">A collection of stunning landscape photographs capturing the beauty of nature.</p>
+                                    <h3>Portrait Retouch Photography</h3>
+                                    <p data-translate="portfolio.project1-desc">A collection of stunning retouched photos.</p>
                                 </div>
                             </div>
                         </div>
@@ -731,9 +1112,10 @@
                                 <div>
                                     <div class="project-tags">
                                         <span class="project-tag" data-translate="portfolio.tag-portrait">Portrait</span>
-                                        <span class="project-tag" data-translate="portfolio.tag-fashion">Fashion</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-corporate">Fashion</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-headshot">Fashion</span>
                                     </div>
-                                    <h3>Portrait Photography</h3>
+                                    <h3>Corporate Portrait Photography</h3>
                                     <p data-translate="portfolio.project2-desc">A series of portrait photographs showcasing fashion and style.</p>
                                 </div>
                             </div>
@@ -749,10 +1131,10 @@
                             <div class="project-content">
                                 <div>
                                     <div class="project-tags">
-                                        <span class="project-tag" data-translate="portfolio.tag-street">Street</span>
-                                        <span class="project-tag" data-translate="portfolio.tag-urban">Urban</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-headshot">Street</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-event">Urban</span>
                                     </div>
-                                    <h3>Street Photography</h3>
+                                    <h3>Event Headshot Photography</h3>
                                     <p data-translate="portfolio.project3-desc">A collection of street photographs capturing urban life and culture.</p>
                                 </div>
                             </div>
@@ -768,11 +1150,31 @@
                             <div class="project-content">
                                 <div>
                                     <div class="project-tags">
-                                        <span class="project-tag" data-translate="portfolio.tag-street">Street</span>
-                                        <span class="project-tag" data-translate="portfolio.tag-urban">Urban</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-portrait">Street</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-beauty">Urban</span>
                                     </div>
-                                    <h3>Street Photography</h3>
-                                    <p data-translate="portfolio.project3-desc">A collection of street photographs capturing urban life and culture.</p>
+                                    <h3>Beauty Headshot Photography</h3>
+                                    <p data-translate="portfolio.project4-desc">A collection of street photographs capturing urban life and culture.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 5 -->
+                    <div class="carousel-slide">
+                        <div class="project-card" data-project="photo4">
+                            <div class="project-image">
+                                <img src="../assets/imgs/portfolio/photography/thumbnails/photography-05-thumb-01.jpg"
+                                    alt="Photography Project Three">
+                            </div>
+                            <div class="project-content">
+                                <div>
+                                    <div class="project-tags">
+                                        <span class="project-tag" data-translate="portfolio.tag-lighting">Street</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-beauty">Urban</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-portrait">Urban</span>
+                                    </div>
+                                    <h3>Lighting Portrait Photography</h3>
+                                    <p data-translate="portfolio.project5-desc">A collection of street photographs capturing urban life and culture.</p>
                                 </div>
                             </div>
                         </div>
@@ -786,6 +1188,33 @@
             </div>
         </section>
     </main>
+
+    <!-- Photography Blog & Vlog Section -->
+    <section class="photography-blog-section">
+        <div class="section-header">
+            <h2 data-translate="portfolio.photography-blog">Photography Blog & Vlogs</h2>
+            <p data-translate="portfolio.photography-blog-desc">Explore photography tips, tutorials, and behind-the-scenes content.</p>
+        </div>
+        
+        <!-- Category Filter -->
+        <div class="blog-categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="tutorials">Tutorials</button>
+            <button class="category-btn" data-category="gear">Gear Reviews</button>
+            <button class="category-btn" data-category="tips">Tips & Tricks</button>
+            <button class="category-btn" data-category="behind-scenes">Behind the Scenes</button>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+            <button class="load-more-btn">Load More Posts</button>
+        </div>
+    </section>
+
     <!-- Project Details Modal -->
     <div class="modal" id="projectModal">
         <div class="modal-content">
@@ -795,16 +1224,91 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Denis Muthui. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Quebec, Canada</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:denismuthui@outlook.com">denismuthui@outlook.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../portfolio/photography.html">Portfolio</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/tyler_d_muthui" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muthui-denis/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Rukw" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@mdmcstudios3972" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.behance.net/denisrukwaro" target="_blank" class="social-link">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to my newsletter for the latest updates and photography tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Denis Muthui. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="../terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
     <script>
         // Project data
         const projectData = {
             photo1: {
-                title: "Photography Project One",
+                title: "HeadShot Photo Retouch",
                 Year: "15 August 2024",
                 technologies: ["Digital Photography", "Photo Editing", "Lighting"],
                 description: "A photography project showcasing various techniques and styles in digital photography.",
@@ -820,9 +1324,9 @@
                 ]
             },
             photo2: {
-                title: "Photography Project Two",
+                title: "Corporate HeadShot Project",
                 Year: "20 August 2024",
-                technologies: ["Portrait Photography", "Studio Lighting", "Post-Processing"],
+                technologies: ["Nikon D3400", "Adobe Photoshop", "Adobe Illustrator"],
                 description: "A series of portrait photographs with professional lighting and post-processing techniques.",
                 media: [
                     {
@@ -836,9 +1340,9 @@
                 ]
             },
             photo3: {
-                title: "Street Photography",
+                title: "Event Portrait Photography",
                 Year: "18 August 2024",
-                technologies: ["Street Photography", "Urban", "Documentary"],
+                technologies: ["Nikon D3400", "Adobe Photoshop", "Adobe Illustrator"],
                 description: "A collection of street photographs capturing urban life and culture. Each image tells a story of city life and human interaction.",
                 media: [
                     {
@@ -852,9 +1356,9 @@
                 ]
             },
             photo4: {
-                title: "Street Photography",
+                title: "Beauty HeadShot Photography",
                 Year: "18 August 2024",
-                technologies: ["Street Photography", "Urban", "Documentary"],
+                technologies: ["Nikon D3400", "Adobe Photoshop", "Adobe Illustrator"],
                 description: "A collection of street photographs capturing urban life and culture. Each image tells a story of city life and human interaction.",
                 media: [
                     {
@@ -868,7 +1372,7 @@
                 ]
             },
             photo5: {
-                title: "Street Photography",
+                title: "Lighting",
                 Year: "18 August 2024",
                 technologies: ["Street Photography", "Urban", "Documentary"],
                 description: "A collection of street photographs capturing urban life and culture. Each image tells a story of city life and human interaction.",
@@ -1184,8 +1688,49 @@
                 });
             }
         }
+
+        // Add this to your existing script section
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize blog grid with photography posts
+            const blogGrid = document.querySelector('.blog-grid');
+            if (blogGrid) {
+                window.blogData.renderBlogGrid(blogGrid, 'photography');
+            }
+
+            // Category filter functionality
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const category = btn.getAttribute('data-category');
+                    const subcategory = category === 'all' ? null : category;
+
+                    // Re-render the grid with filtered posts
+                    if (blogGrid) {
+                        window.blogData.renderBlogGrid(blogGrid, 'photography', subcategory);
+                    }
+                });
+            });
+
+            // Load more functionality
+            const loadMoreBtn = document.querySelector('.load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', () => {
+                    // Add your load more logic here
+                    console.log('Load more clicked');
+                });
+            }
+        });
     </script>
     <!-- Add language.js script -->
     <script src="../assets/js/language.js"></script>
+    <!-- Add blog data script -->
+    <script src="../assets/js/blog-data.js"></script>
 </body>
 </html> 

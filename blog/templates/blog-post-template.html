@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[BLOG_TITLE] | Denis Muthui</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../assets/js/main.js" defer></script>
+    <style>
+        .blog-post-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-post-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-post-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-text);
+        }
+
+        .blog-post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: var(--secondary-text);
+            margin-bottom: 2rem;
+        }
+
+        .blog-post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-post-content {
+            color: var(--primary-text);
+            line-height: 1.8;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-post-content h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-text);
+        }
+
+        .blog-post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .blog-post-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--secondary-text);
+        }
+
+        .blog-post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .blog-post-tag {
+            background: var(--tile-bg);
+            padding: 0.3rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        .blog-post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .blog-post-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .blog-post-nav-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .blog-post-container {
+                padding: 1rem;
+            }
+
+            .blog-post-header h1 {
+                font-size: 2rem;
+            }
+
+            .blog-post-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="../../index.html" class="logo">Denis<span>Muthui</span></a>
+            <nav class="nav-links">
+                <a href="../../index.html" data-translate="nav.home">Home</a>
+                <a href="../../about.html" data-translate="nav.about">About</a>
+                <a href="../../portfolio/photography.html" data-translate="nav.portfolio">Portfolio</a>
+                <a href="index.html" class="active" data-translate="nav.blog">Blog</a>
+                <a href="../../contact.html" data-translate="nav.contact">Contact</a>
+                <button class="language-toggle" aria-label="Toggle language">
+                    <i class="fas fa-globe"></i>
+                    <span>FR</span>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-moon"></i></button>
+            </nav>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="blog-post-container">
+        <article class="blog-post">
+            <header class="blog-post-header">
+                <h1>[BLOG_TITLE]</h1>
+                <div class="blog-post-meta">
+                    <span><i class="fas fa-calendar"></i> [PUBLISH_DATE]</span>
+                    <span><i class="fas fa-clock"></i> [READ_TIME] min read</span>
+                    <span><i class="fas fa-folder"></i> [CATEGORY]</span>
+                </div>
+            </header>
+
+            <div class="blog-post-content">
+                <!-- Featured Image -->
+                <img src="/assets/imgs/GreenLeaf Organic Market-02.png" alt="[IMAGE_ALT_TEXT]">
+
+                <!-- Blog Content -->
+                [BLOG_CONTENT]
+
+                <!-- Tags -->
+                <div class="blog-post-tags">
+                    <span class="blog-post-tag">[TAG_1]</span>
+                    <span class="blog-post-tag">[TAG_2]</span>
+                    <span class="blog-post-tag">[TAG_3]</span>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="blog-post-navigation">
+                <a href="../templates/vlog-post-template.html" class="blog-post-nav-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous Post
+                </a>
+                <a href="[NEXT_POST_URL]" class="blog-post-nav-link">
+                    Next Post
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Denis Muthui. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

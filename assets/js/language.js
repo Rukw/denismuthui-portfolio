@@ -11,6 +11,7 @@ const translations = {
         'nav.home': 'Home',
         'nav.about': 'About',
         'nav.portfolio': 'Portfolio',
+        'nav.blog': 'Blog',
         'nav.contact': 'Contact',
         
         // About Page
@@ -72,9 +73,11 @@ const translations = {
         'portfolio.tag-rebrand': 'Rebrand',
         'portfolio.tag-strategy': 'Strategy',
         'portfolio.tag-packaging': 'Packaging',
-        'portfolio.project1-desc': 'Modern logo and identity design for a startup.',
-        'portfolio.project2-desc': 'Comprehensive rebranding for a local business.',
-        'portfolio.project3-desc': 'Packaging and visual system for a new product line.',
+        'portfolio.project1-desc': 'A collection of stunning retouched photos.',
+        'portfolio.project2-desc': 'Clean, modern corporate photos tailored for success.',
+        'portfolio.project3-desc': 'Perfectly retouched portraits that capture the spirit of your event.',
+        'portfolio.project4-desc': 'Editorial-style photos that highlight elegance and style.',
+        'portfolio.project5-desc': 'Stunning visuals brought to life through perfected lighting.',
         'portfolio.category': 'Category:',
         'portfolio.duration': 'Duration:',
         'portfolio.technologies': 'Technologies:',
@@ -239,10 +242,12 @@ const translations = {
         'portfolio.tags.web': 'Web Design',
         'portfolio.tag-portrait': 'Portrait',
         'portfolio.tag-studio': 'Studio',
-        'portfolio.tag-landscape': 'Landscape',
-        'portfolio.tag-nature': 'Nature',
+        'portfolio.tag-corporate': 'Corporate',
+        'portfolio.tag-lighting': 'Lighting',
+        'portfolio.tag-headshot': 'Headshot',
+        'portfolio.tag-event': 'Events',
         'portfolio.tag-street': 'Street',
-        'portfolio.tag-urban': 'Urban',
+        'portfolio.tag-beauty': 'Beauty',
         'portfolio.tag-character': 'Character',
         'portfolio.tag-concept': 'Concept',
         'portfolio.tag-icon': 'Icon',
@@ -325,7 +330,13 @@ const translations = {
                 title: 'Branding Project Three',
                 description: 'Complete brand refresh including new logo, color scheme, and marketing materials.'
             }
-        }
+        },
+
+        // Call to Action Section
+        'about.cta.title': 'Let\'s Work Together!',
+        'about.cta.text': 'I\'m actively seeking new opportunities and would love to bring my creative expertise to your team. With my diverse skill set and passion for innovation, I\'m confident I can make a valuable contribution to your projects.',
+        'about.cta.contact': 'Get in Touch',
+        'about.cta.back-to-top': 'Back to Top',
     },
     fr: {
         // Hero Section
@@ -338,11 +349,12 @@ const translations = {
         'nav.home': 'Accueil',
         'nav.about': 'À Propos',
         'nav.portfolio': 'Portfolio',
+        'nav.blog': 'Blog',
         'nav.contact': 'Contact',
         
         // About Page
         'about.title': 'À Propos de Moi',
-        'about.intro': 'Je suis un spécialiste créatif en médias interactifs et marketing, avec une expérience dans les campagnes, les graphiques animés, la retouche d'images, l'illustration et la conception web. J'adore travailler avec les outils Microsoft et Adobe et explorer les technologies émergentes comme l'IA. Je détiens un baccalauréat en Marketing et deux certificats d'études supérieures canadiens en Gestion du Marketing et en Médias Interactifs. Bilingue en anglais et en français, je me perfectionne actuellement en Google Ads et en CRM. En dehors du travail, j'aime la lecture, la peinture numérique, la salle de sport et les randonnées hivernales - tout cela s'enracine dans mon amour pour la simplicité et les connexions significatives.',
+        'about.intro': 'Je suis un spécialiste créatif en médias interactifs et marketing, avec une expérience dans les campagnes, les graphiques animés, la retouche d\'images, l\'illustration et la conception web. J\'adore travailler avec les outils Microsoft et Adobe et explorer les technologies émergentes comme l\'IA. Je détiens un baccalauréat en Marketing et deux certificats d\'études supérieures canadiens en Gestion du Marketing et en Médias Interactifs. Bilingue en anglais et en français, je me perfectionne actuellement en Google Ads et en CRM. En dehors du travail, j\'aime la lecture, la peinture numérique, la salle de sport et les randonnées hivernales - tout cela s\'enracine dans mon amour pour la simplicité et les connexions significatives.',
         'about.skills': 'Compétences Techniques',
         'about.design': 'Logiciels de Design',
         'about.web': 'Développement Web',
@@ -359,7 +371,7 @@ const translations = {
         'about.learning': 'Apprentissage Continu',
         'about.learning-text': 'Toujours à l\'exploration de nouvelles techniques et technologies.',
         'about.values': 'Mes Valeurs Clés',
-        'about.values-text': 'Avec plus de 5 ans d'expérience dans l'industrie créative, j'ai développé des valeurs fondamentales qui guident mon approche du design, de la créativité et du développement professionnel.',
+        'about.values-text': 'Avec plus de 5 ans d\'expérience dans l\'industrie créative, j\'ai développé des valeurs fondamentales qui guident mon approche du design, de la créativité et du développement professionnel.',
         'about.values.creative': 'Processus Créatif',
         'about.values.creative-text': 'Je crois en la combinaison de la réflexion stratégique avec une exécution innovante pour livrer des solutions impactantes.',
         'about.values.design': 'Philosophie du Design',
@@ -367,14 +379,13 @@ const translations = {
         'about.values.collaboration': 'Collaboration Client',
         'about.values.collaboration-text': 'Construire des partenariats solides grâce à une communication ouverte et une compréhension approfondie des besoins des clients.',
         'about.values.learning': 'Apprentissage Continu',
-        'about.values.learning-text': 'Adopter les nouvelles technologies et méthodologies pour rester à la pointe de l'innovation créative.',
+        'about.values.learning-text': 'Adopter les nouvelles technologies et méthodologies pour rester à la pointe de l\'innovation créative.',
         'about.download.title': 'Télécharger Mes Documents',
-        'about.download.desc': 'N'hésitez pas à télécharger mon CV et ma lettre de motivation, ou continuez à faire défiler pour explorer mon parcours professionnel en détail.',
+        'about.download.desc': 'N\'hésitez pas à télécharger mon CV et ma lettre de motivation, ou continuez à faire défiler pour explorer mon parcours professionnel en détail.',
         'about.download.cv': 'Télécharger CV',
         'about.download.cover': 'Télécharger Lettre de Motivation',
 
         // Portfolio
-        // Branding
         'portfolio.title': 'Portfolio Categories',
         'portfolio.branding': 'Identité Visuelle',
         'portfolio.graphic': 'Design Graphique',
@@ -400,9 +411,11 @@ const translations = {
         'portfolio.tag-rebrand': 'Refonte',
         'portfolio.tag-strategy': 'Stratégie',
         'portfolio.tag-packaging': 'Emballage',
-        'portfolio.project1-desc': 'Design moderne de logo et d\'identité pour une startup.',
-        'portfolio.project2-desc': 'Refonte complète pour une entreprise locale.',
-        'portfolio.project3-desc': 'Système visuel et d\'emballage pour une nouvelle gamme de produits.',
+        'portfolio.project1-desc': 'Une collection de photos retouchées à couper le souffle.',
+        'portfolio.project2-desc': 'Photos corporatives modernes et épurées, conçues pour le succès.',
+        'portfolio.project3-desc': 'Portraits d\'événement parfaitement retouchés qui capturent l\'esprit du moment.',
+        'portfolio.project4-desc': 'Photos de style éditorial mettant en valeur l\'élégance et le style.',
+        'portfolio.project5-desc': 'Visuels saisissants mis en valeur par un éclairage maîtrisé.',
         'portfolio.category': 'Catégorie :',
         'portfolio.duration': 'Durée :',
         'portfolio.technologies': 'Technologies :',
@@ -654,7 +667,13 @@ const translations = {
                 title: 'Projet de Marque Trois',
                 description: 'Rafraîchissement complet de la marque incluant un nouveau logo, un nouveau schéma de couleurs et des supports marketing.'
             }
-        }
+        },
+
+        // Call to Action Section
+        'about.cta.title': 'Travaillons Ensemble !',
+        'about.cta.text': 'Je recherche activement de nouvelles opportunités et j\'aimerais apporter mon expertise créative à votre équipe. Avec mes compétences diversifiées et ma passion pour l\'innovation, je suis convaincu que je peux apporter une contribution précieuse à vos projets.',
+        'about.cta.contact': 'Contactez-moi',
+        'about.cta.back-to-top': 'Retour en haut',
     }
 };
 

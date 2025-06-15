@@ -1,0 +1,11 @@
+{
+  "name": "denismuthui-website",
+  "version": "1.0.0",
+  "description": "Denis Muthui's Portfolio Website",
+  "scripts": {
+    "optimize-videos": "node scripts/optimize-video.js"
+  },
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2"
+  }
+} 

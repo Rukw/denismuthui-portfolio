@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[VLOG_TITLE] | Denis Muthui</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../assets/js/main.js" defer></script>
+    <style>
+        .vlog-post-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .vlog-post-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .vlog-post-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-text);
+        }
+
+        .vlog-post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: var(--secondary-text);
+            margin-bottom: 2rem;
+        }
+
+        .vlog-post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: 2rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+        }
+
+        .vlog-post-content {
+            color: var(--primary-text);
+            line-height: 1.8;
+        }
+
+        .vlog-post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .vlog-post-content h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-text);
+        }
+
+        .vlog-post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .vlog-post-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--secondary-text);
+        }
+
+        .vlog-post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .vlog-post-tag {
+            background: var(--tile-bg);
+            padding: 0.3rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        .vlog-post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .vlog-post-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .vlog-post-nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .video-chapters {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--tile-bg);
+            border-radius: 0.5rem;
+        }
+
+        .video-chapters h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-text);
+        }
+
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .chapter-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-time {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .chapter-title {
+            color: var(--primary-text);
+        }
+
+        @media (max-width: 768px) {
+            .vlog-post-container {
+                padding: 1rem;
+            }
+
+            .vlog-post-header h1 {
+                font-size: 2rem;
+            }
+
+            .vlog-post-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="../../index.html" class="logo">Denis<span>Muthui</span></a>
+            <nav class="nav-links">
+                <a href="../../index.html" data-translate="nav.home">Home</a>
+                <a href="../../about.html" data-translate="nav.about">About</a>
+                <a href="../../portfolio/photography.html" data-translate="nav.portfolio">Portfolio</a>
+                <a href="../../contact.html" data-translate="nav.contact">Contact</a>
+                <button class="language-toggle" aria-label="Toggle language">
+                    <i class="fas fa-globe"></i>
+                    <span>FR</span>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-moon"></i></button>
+            </nav>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="vlog-post-container">
+        <article class="vlog-post">
+            <header class="vlog-post-header">
+                <h1>[VLOG_TITLE]</h1>
+                <div class="vlog-post-meta">
+                    <span><i class="fas fa-calendar"></i> [PUBLISH_DATE]</span>
+                    <span><i class="fas fa-clock"></i> [VIDEO_DURATION]</span>
+                    <span><i class="fas fa-folder"></i> [CATEGORY]</span>
+                </div>
+            </header>
+
+            <div class="video-container">
+                <!-- Replace with your video embed code -->
+                <iframe src="[VIDEO_URL]" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Video Chapters -->
+            <div class="video-chapters">
+                <h3>Video Chapters</h3>
+                <ul class="chapter-list">
+                    <li class="chapter-item">
+                        <span class="chapter-time">0:00</span>
+                        <span class="chapter-title">Introduction</span>
+                    </li>
+                    <!-- Add more chapters as needed -->
+                </ul>
+            </div>
+
+            <div class="vlog-post-content">
+                <!-- Vlog Description -->
+                [VLOG_DESCRIPTION]
+
+                <!-- Tags -->
+                <div class="vlog-post-tags">
+                    <span class="vlog-post-tag">[TAG_1]</span>
+                    <span class="vlog-post-tag">[TAG_2]</span>
+                    <span class="vlog-post-tag">[TAG_3]</span>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="vlog-post-navigation">
+                <a href="[PREVIOUS_POST_URL]" class="vlog-post-nav-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous Vlog
+                </a>
+                <a href="../templates/blog-post-template.html" class="vlog-post-nav-link">
+                    Next Vlog
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Denis Muthui. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
