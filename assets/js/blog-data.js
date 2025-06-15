@@ -1,12 +1,12 @@
 // Blog post data structure
 const blogPosts = {
     photography: {
-        tutorials: [
+        tips: [
             {
                 id: 'mastering-manual-mode',
                 title: 'Mastering Manual Mode: A Complete Guide',
                 category: 'photography',
-                subcategory: 'tutorials',
+                subcategory: 'Tips & Tricks',
                 type: 'blog',
                 date: 'July 15, 2025',
                 readTime: '10 min',

@@ -1351,6 +1351,10 @@ footer .container {
     .section-header {
         width: 20%;
     }
+
+    .section-header2 {
+        width: 100%;
+    }
     
     .contact-container {
         grid-template-columns: 1fr 1fr;
@@ -2226,6 +2230,7 @@ footer .container {
 
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem;
     background: var(--primary-bg);
     position: relative;
 }

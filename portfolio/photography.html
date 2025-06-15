@@ -26,9 +26,11 @@
             flex-wrap: wrap;
         }
 
-        .section-header {
+        .section-header, .section-header2 {
             padding: 0 1rem;
     }
+
+
 
         .carousel-wrapper {
             width: 100%;
@@ -160,9 +162,6 @@
                 height: 65vh;
             }
 
-            
-
-
             .carousel-nav {
                 bottom: 1rem;
                 background-color: var(--tile-bg);
@@ -178,7 +177,8 @@
 
         @media (min-width: 768px) {
             .carousel-container {
-                width: 100%;
+                width: 93%;
+                margin: 1rem auto;
                 flex-wrap: nowrap;
                 left: 0;
                 overflow: hidden;
@@ -212,6 +212,8 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                background-color: var(--tile-bg);
+                padding: 1rem;
             }
 
             .project-card {
@@ -222,12 +224,11 @@
                 height: 70%;
             }
 
-
         }
 
         @media (min-width: 992px) {
             .carousel-container {
-                width: 100%;
+                width: 93%;
                 max-width: 1200px;
                 margin: 1rem auto;
             }
@@ -249,7 +250,7 @@
 
         @media (min-width: 1200px) {
             .carousel-container {
-                width: 100%;
+                width: 93%;
             }
 
             .carousel-slide {
@@ -652,7 +653,7 @@
         .photography-blog-section {
             max-width: 1200px;
             width: 100%;
-            margin: 0 auto;
+            margin: 2rem auto;
             padding: .5rem 0;
             background: var(--bg);
         }
@@ -799,6 +800,7 @@
         @media (min-width: 768px) {
             .photography-blog-section {
                 padding: 0;
+                padding: .5rem 2rem;
             }
 
             .blog-categories {
@@ -823,7 +825,6 @@
         .footer {
             background: var(--tile-bg);
             padding: 4rem 2rem 2rem;
-            margin-top: 4rem;
         }
 
         .footer-content {
@@ -1161,7 +1162,7 @@
                     </div>
                     <!-- Project Card 5 -->
                     <div class="carousel-slide">
-                        <div class="project-card" data-project="photo4">
+                        <div class="project-card" data-project="photo5">
                             <div class="project-image">
                                 <img src="../assets/imgs/portfolio/photography/thumbnails/photography-05-thumb-01.jpg"
                                     alt="Photography Project Three">
@@ -1169,9 +1170,9 @@
                             <div class="project-content">
                                 <div>
                                     <div class="project-tags">
-                                        <span class="project-tag" data-translate="portfolio.tag-lighting">Street</span>
-                                        <span class="project-tag" data-translate="portfolio.tag-beauty">Urban</span>
-                                        <span class="project-tag" data-translate="portfolio.tag-portrait">Urban</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-lighting">Lighting</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-beauty">Beauty</span>
+                                        <span class="project-tag" data-translate="portfolio.tag-portrait">Portrait</span>
                                     </div>
                                     <h3>Lighting Portrait Photography</h3>
                                     <p data-translate="portfolio.project5-desc">A collection of street photographs capturing urban life and culture.</p>
@@ -1191,7 +1192,7 @@
 
     <!-- Photography Blog & Vlog Section -->
     <section class="photography-blog-section">
-        <div class="section-header">
+        <div class="section-header2">
             <h2 data-translate="portfolio.photography-blog">Photography Blog & Vlogs</h2>
             <p data-translate="portfolio.photography-blog-desc">Explore photography tips, tutorials, and behind-the-scenes content.</p>
         </div>
@@ -1372,7 +1373,7 @@
                 ]
             },
             photo5: {
-                title: "Lighting",
+                title: "Lighting Beauty Headshot",
                 Year: "18 August 2024",
                 technologies: ["Street Photography", "Urban", "Documentary"],
                 description: "A collection of street photographs capturing urban life and culture. Each image tells a story of city life and human interaction.",
