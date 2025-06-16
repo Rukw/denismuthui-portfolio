@@ -64,6 +64,9 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
         }
 
         .blog-card {
@@ -172,7 +175,7 @@
             transform: translateY(-2px);
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .blog-hero {
                 padding: 3rem 1rem;
             }
@@ -196,6 +199,20 @@
 
             .blog-grid {
                 grid-template-columns: 1fr;
+                justify-items: start ;
+            }
+
+            /* Language Toggle Mobile Styles */
+            .language-toggle span {
+                display: inline-block; /* Make the span visible */
+                margin-left: 0.5rem; /* Add space between icon and text */
+                font-weight: 600;
+            }
+
+            .language-toggle {
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 1rem;
             }
         }
 
@@ -404,6 +421,50 @@
             .newsletter-form button {
                 width: 100%;
             }
+
+            .blog-hero {
+                padding: 3rem 1rem;
+            }
+
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-container {
+                padding: 1rem;
+            }
+
+            .blog-filters {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Language Toggle Mobile Styles */
+            .language-toggle {
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 1rem;
+            }
+
+            .language-toggle i {
+                font-size: 1.2rem;
+                color: var(--accent);
+            }
+
+            .language-toggle span {
+                display: inline-block;
+                margin-left: 0.5rem;
+                font-weight: 600;
+                color: var(--primary-text);
+            }
         }
 
         /* Theme Toggle Switch Styles */
@@ -467,6 +528,7 @@
         </div>
     </header>
 
+    <main>
     <!-- Blog Hero Section -->
     <section class="blog-hero">
         <h1 data-translate="blog.title">Blog & Vlogs</h1>
@@ -577,6 +639,7 @@
             </div>
         </div>
     </footer>
+    </main>
 
     <!-- Scripts -->
     <script src="../assets/js/language.js"></script>
