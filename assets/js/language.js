@@ -2,8 +2,8 @@
 const translations = {
     en: {
         // Hero Section
-        'hero.title': 'Creative Designer & Developer',
-        'hero.subtitle': 'Crafting beautiful digital experiences that make an impact. Building this website is one of my greatest achievement.',
+        'hero.title': 'Interactive Design Marketing Specialist.',
+        'hero.subtitle': 'Interactive Media Specialist | Marketing Management Specialist | Graphic, UI/UX, Web Design & Dev',
         'hero.view-work': 'View My Work',
         'hero.contact': 'Get in Touch',
         
@@ -353,8 +353,8 @@ const translations = {
     },
     fr: {
         // Hero Section
-        'hero.title': 'Designer & Développeur Créatif',
-        'hero.subtitle': 'Création d\'expériences numériques belles et impactantes. Construire ce site web est l\'un de mes plus grands succès.',
+        'hero.title': 'Spécialiste en Design Interactif et Marketing.',
+        'hero.subtitle': 'Spécialiste en médias interactifs | Spécialiste en gestion marketing | Design graphique, UI/UX, conception et développement web',
         'hero.view-work': 'Voir Mon Travail',
         'hero.contact': 'Me Contacter',
         

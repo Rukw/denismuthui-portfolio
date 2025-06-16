@@ -180,7 +180,7 @@ body {
     text-align: center;
 }
 
-.hero-video {
+.hero-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -189,11 +189,13 @@ body {
     z-index: 1;
 }
 
-.hero-video video {
+.hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .hero-overlay {
@@ -202,7 +204,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.5)
+    );
     z-index: 2;
 }
 
@@ -253,12 +259,13 @@ body {
 }
 
 .hero-buttons .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-buttons .btn.primary:hover {
-    background: var(--accent-hover);
+    background: var(--accent);
+    box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.3);
 }
 
 .hero-buttons .btn.secondary:hover {
@@ -280,22 +287,24 @@ body {
     }
 
     .hero-buttons .btn {
-        text-align: center;
     }
 }
 
-/* Dark mode adjustments */
 body.dark-mode .hero-overlay {
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.6)
+    );
 }
 
 /* Loading state */
-.hero-video.loading {
+.hero-image.loading {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
-.hero-video.loaded {
+.hero-image.loaded {
     opacity: 1;
 }
 /* Portfolio Categories Grid - Modern Full-Width Style */
@@ -1207,10 +1216,7 @@ footer .container {
     padding: 2rem 1rem;
     background: var(--primary-bg);
     position: relative;
-    background-image: url('../imgs/contact-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    overflow: hidden;
 }
 
 .contact-section::before {
@@ -1220,7 +1226,28 @@ footer .container {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background-image: url('../imgs/Denis_lansdcape.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    opacity: 0.15;
+    z-index: 1;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(var(--accent-rgb), 0.1) 0%,
+        rgba(var(--accent-rgb), 0.05) 100%
+    );
     z-index: 1;
 }
 
@@ -1231,17 +1258,33 @@ footer .container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2rem;
+    padding: 2.5rem;
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] .contact-container {
     background: rgba(35, 39, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .contact-section::after {
+    background: linear-gradient(
+        135deg,
+        rgba(var(--accent-rgb), 0.15) 0%,
+        rgba(var(--accent-rgb), 0.05) 100%
+    );
 }
 
 .contact-info {
@@ -2377,7 +2420,6 @@ footer .container {
 /* Download Links Section */
 .download-links {
     text-align: center;
-    margin: 4rem 0 2rem;
     padding: 2rem;
     background: var(--tile-bg);
     border-radius: 1rem;
