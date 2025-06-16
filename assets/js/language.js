@@ -118,6 +118,19 @@ const translations = {
         'about.education.imm.gpa': 'GPA: 3.63, Placed on dean\'s honours list for outstanding academic achievement',
         'about.education.marketing.gpa': 'GPA: 3.64, Placed on dean\'s honours list for outstanding academic achievement',
 
+        // Testimonials Section
+        'about.testimonials': 'Professional Testimonials',
+        'about.testimonials-text': 'Hear what my previous employers have to say about working with me. Download The full recommendation letters by clicking on the link.',
+        'about.testimonials.kiambu.name': 'CPA Micheal Nyangi',
+        'about.testimonials.kiambu.position': 'Club Captain',
+        'about.testimonials.kiambu.company': 'Kiambu Club Limited',
+        'about.testimonials.kiambu.text': 'Denis is an exceptional creative professional his creative skills are second to none. He has demonstrated an exceptional eye for design and is able to create visually stunning content that effectively communicates our brand\'s messaging. His writing skills are also exceptional, and he consistently produced engaging and effective copy for all of our marketing initiatives.',
+        'about.testimonials.amazon.name': 'Lucy Wakori',
+        'about.testimonials.amazon.position': 'Business Development Manager',
+        'about.testimonials.amazon.company': 'Amazon Consultants Ltd',
+        'about.testimonials.amazon.text': 'Denis handled his assignments professional and we found him to be keen and eager to learn. He is diligent, a reliable team player whose conduct has been excellent during his tenure. His performance during this period exhibited good work ethics and interpersonal skills.',
+        'about.download.recommendation': 'Download Recommendation',
+
         // Experience Section
         'about.other-experience': 'Other Experience',
         
@@ -455,6 +468,19 @@ const translations = {
         'about.education.bachelor.date': '2015 - 2019',
         'about.education.imm.gpa': 'Moyenne : 3.63, Mention d\'honneur du doyen pour excellence académique',
         'about.education.marketing.gpa': 'Moyenne : 3.64, Mention d\'honneur du doyen pour excellence académique',
+
+        // Testimonials Section
+        'about.testimonials': 'Témoignages Professionnels',
+        'about.testimonials-text': 'Écoutez ce que mes anciens employeurs ont à dire sur le travail avec moi. Téléchargez les lettres de recommandation complètes en cliquant sur le lien.',
+        'about.testimonials.kiambu.name': 'CPA Micheal Nyangi',
+        'about.testimonials.kiambu.position': 'Capitaine de Club',
+        'about.testimonials.kiambu.company': 'Kiambu Club Limited',
+        'about.testimonials.kiambu.text': 'Denis est un professionnel créatif exceptionnel dont les compétences créatives sont secondes à aucune. Il a démontré un excellent regard pour le design et est capable de créer du contenu visuellement époustouflant qui communique efficacement le message de notre marque. Ses compétences en écriture sont également exceptionnelles, et il a produit constamment du texte captivant et efficace pour tous nos initiatives marketing.',
+        'about.testimonials.amazon.name': 'Lucy Wakori',
+        'about.testimonials.amazon.position': 'Directeur du Développement des Affaires',
+        'about.testimonials.amazon.company': 'Amazon Consultants Ltd',
+        'about.testimonials.amazon.text': 'Denis a traité ses affectations professionnellement et nous avons trouvé qu\'il était attentif et enthousiaste à apprendre. Il est diligent, un joueur de l\'équipe fiable dont le comportement a été excellent pendant son mandat. Son performance pendant cette période a montré des bonnes éthiques de travail et des compétences interpersonnelles.',
+        'about.download.recommendation': 'Télécharger la Recommandation',
 
         // Experience Section
         'about.other-experience': 'Autres Expériences',

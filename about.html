@@ -379,6 +379,203 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 data-translate="about.testimonials">Professional Testimonials</h2>
+                <p class="section-description" data-translate="about.testimonials-text">Hear what my previous employers have to say about working with me. Download The full recommendation letters by clicking on the link.</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p data-translate="about.testimonials.kiambu.text">Denis is an exceptional creative professional his creative skills are second to none. He has demonstrated an exceptional eye for design and is able to create visually stunning content that effectively communicates our brand's messaging. His writing skills are also exceptional, and he consistently produced engaging and effective copy for all of our marketing initiatives/p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 data-translate="about.testimonials.kiambu.name">CPA Micheal Nyangi</h4>
+                                <p data-translate="about.testimonials.kiambu.position">Club Captain</p>
+                                <h5><a href="https://www.facebook.com/kiambugolfclub" target="_blank" rel="noopener noreferrer" data-translate="about.testimonials.kiambu.company">Kiambu Club Limited</a></h5>
+                            </div>
+                            <a href="assets/docs/DENIS MUTHUI  RUKWARO -KIAMBU GOLF RECOMENDATION LETTER.pdf" class="download-btn" download>
+                                <i class="fas fa-file-pdf"></i>
+                                <span data-translate="about.download.recommendation">Download Recommendation</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p data-translate="about.testimonials.amazon.text">Denis handled his assignments professional and we found him to be keen and eager to learn. He is diligent, a reliable team player whose conduct has been excellent during his tenure. His performance during this period exhibited good work ethics and interpersonal skills.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 data-translate="about.testimonials.amazon.name">Lucy Wakori</h4>
+                                <p data-translate="about.testimonials.amazon.position">Business Development Manager</p>
+                                <h5><a href="https://amazon.co.ke/" target="_blank" rel="noopener noreferrer" data-translate="about.testimonials.amazon.company">Amazon Consultants Ltd</a></h5>
+                            </div>
+                            <a href="assets/docs/DENIS MUTHUI RUKWARO -AMAZON CONSULTANTS RECOMENDATION LETTER.pdf" class="download-btn" download>
+                                <i class="fas fa-file-pdf"></i>
+                                <span data-translate="about.download.recommendation">Download Recommendation</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .testimonials-section {
+                padding: 4rem 0;
+                background-color: var(--bg);
+            }
+
+            .testimonials-section .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+
+            .testimonials-section h2 {
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            .section-description {
+                text-align: center;
+                max-width: 600px;
+                margin: 0 auto 2rem;
+                color: var(--text-secondary);
+            }
+
+            .testimonials-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .testimonial-card {
+                background-color: var(--tile-bg);
+                border-radius: 15px;
+                padding: 2rem;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .testimonial-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--accent);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .testimonial-content {
+                position: relative;
+                padding-left: 1.5rem;
+                flex-grow: 1;
+            }
+
+            .testimonial-content i {
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: var(--accent);
+                font-size: 1.2rem;
+            }
+
+            .testimonial-content p {
+                margin: 0;
+                line-height: 1.6;
+                color: var(--text);
+            }
+
+            .testimonial-author {
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid var(--border);
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .author-info h4 {
+                margin: 0;
+                color: var(--accent);
+                font-size: 1.1rem;
+            }
+
+            .author-info p {
+                margin: 0.25rem 0 0;
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+            }
+
+            .author-info h5 {
+                margin: 0.75rem 0 0;
+                font-size: 0.9rem;
+            }
+
+            .author-info h5 a {
+                color: var(--accent);
+                background-color: rgba(52, 152, 219, 0.1);
+                border-radius: 4px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: 600;
+            }
+
+            .author-info h5 a:hover {
+                color: var(--accent-hover);
+                text-decoration: underline;
+            }
+
+            .testimonial-author .download-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.6rem 1rem;
+                background-color: var(--accent);
+                color: white;
+                border-radius: 8px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: 500;
+                font-size: 0.9rem;
+                width: fit-content;
+            }
+
+            .testimonial-author .download-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .testimonial-author .download-btn i {
+                font-size: 1rem;
+            }
+
+            @media (max-width: 768px) {
+                .testimonials-section {
+                    padding: 3rem 0;
+                }
+
+                .testimonials-grid {
+                    grid-template-columns: 1fr;
+                    max-width: 600px;
+                    margin: 2rem auto 0;
+                }
+
+                .testimonial-card {
+                    padding: 1.5rem;
+                }
+
+                .testimonial-author {
+                    gap: 0.75rem;
+                }
+            }
+        </style>
+
         <!-- Download Links Section -->
         <section class="download-links">
             <h3 data-translate="about.download.title">Download My Documents</h3>
@@ -456,6 +653,8 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+                align-content: center;
+                align-items: center;
             }
 
             .download-btn {
