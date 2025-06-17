@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,20 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="assets/js/main.js" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EQVZCQPP1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0EQVZCQPP1');
+    </script>
+    
     <style>
         /* Theme Toggle Switch Styles */
         .theme-toggle {
@@ -57,8 +72,10 @@
         /* Language Toggle Mobile Styles */
         @media (max-width: 768px) {
             .language-toggle span {
-                display: inline-block; /* Make the span visible */
-                margin-left: 0.5rem; /* Add space between icon and text */
+                display: inline-block;
+                /* Make the span visible */
+                margin-left: 0.5rem;
+                /* Add space between icon and text */
                 font-weight: 600;
             }
 
@@ -71,12 +88,13 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Loading Spinner -->
     <div class="loader">
         <div class="spinner"></div>
     </div>
-    
+
     <!-- Header -->
     <header class="navbar">
         <div class="navbar-inner">
@@ -98,24 +116,25 @@
             </button>
         </div>
     </header>
-    
+
     <main>
         <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-image">
-                <img src="assets/imgs/Denis_lansdcape.jpg" alt="Denis Muthui" class="hero-img">
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 data-translate="hero.title">Denis Muthui</h1>
-                <p data-translate="hero.subtitle">Photographer & Creative Director</p>
-                <div class="hero-buttons">
-                    <a href="portfolio/photography.html" class="btn primary" data-translate="hero.view-work">View My Work</a>
-                    <a href="contact.html" class="btn secondary" data-translate="hero.contact">Contact Me</a>
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-image">
+                    <img src="assets/imgs/Denis_lansdcape.jpg" alt="Denis Muthui" class="hero-img">
                 </div>
-            </div>
-        </section>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 data-translate="hero.title">Denis Muthui</h1>
+                    <p data-translate="hero.subtitle">Photographer & Creative Director</p>
+                    <div class="hero-buttons">
+                        <a href="portfolio/photography.html" class="btn primary" data-translate="hero.view-work">View My
+                            Work</a>
+                        <a href="contact.html" class="btn secondary" data-translate="hero.contact">Contact Me</a>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -138,8 +157,9 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Add language.js script -->
     <script src="assets/js/language.js"></script>
 </body>
+
 </html>
